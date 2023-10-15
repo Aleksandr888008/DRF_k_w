@@ -1,0 +1,14 @@
+celery
+coverage
+Django
+django-celery-beat
+django-timezone-field
+djangorestframework
+djangorestframework-simplejwt
+drf-yasg
+psycopg2-binary
+python-dotenv
+redis
+pillow
+requests
+django-cors-headers
