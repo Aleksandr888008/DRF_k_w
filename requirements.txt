@@ -12,3 +12,5 @@ redis
 pillow
 requests
 django-cors-headers
+django-filter
+
