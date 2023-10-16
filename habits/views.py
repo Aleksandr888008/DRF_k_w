@@ -13,7 +13,7 @@ class HabitsCreateAPIView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         new_habit = serializer.save()
-        new_habit.user = self.request.user
+        new_habit.owner = self.request.user
         new_habit.save()
 
 
@@ -25,7 +25,7 @@ class HabitsListAPIView(generics.ListAPIView):
     pagination_class = ListPaginator
 
     def get_queryset(self):
-        return super().get_queryset().filter(user=self.request.user)
+        return super().get_queryset().filter(owner=self.request.user)
 
 
 class HabitsRetrieveAPIView(generics.RetrieveAPIView):
