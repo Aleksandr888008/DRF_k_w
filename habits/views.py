@@ -32,20 +32,20 @@ class HabitsRetrieveAPIView(generics.RetrieveAPIView):
     """Детальный просмотр привычки"""
     queryset = Habit.objects.all()
     serializer_class = HabitSerializer
-    permission_classes = [IsAuthenticated | IsOwner]
+    permission_classes = [IsAuthenticated, IsOwner]
 
 
 class HabitsUpdateAPIView(generics.UpdateAPIView):
     """Изменение привычки"""
     queryset = Habit.objects.all()
     serializer_class = HabitSerializer
-    permission_classes = [IsAuthenticated | IsOwner]
+    permission_classes = [IsAuthenticated, IsOwner]
 
 
 class HabitsDestroyAPIView(generics.DestroyAPIView):
     """Удаление привычки"""
     queryset = Habit.objects.all()
-    permission_classes = [IsAuthenticated | IsOwner]
+    permission_classes = [IsAuthenticated, IsOwner]
 
 
 class HabitListPublicAPIView(generics.ListAPIView):
