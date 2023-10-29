@@ -16,12 +16,10 @@ def send_message(user, text):
     )
     return response.json()
 
-
-def update_chat_id():
-    """Получение chat_id пользователей"""
-    response = requests.get(f"https://api.telegram.org/bot{TOKEN}/getUpdates").json()
-    if response.get("ok"):
-        user_chats = []  # Получение списка
-        for ch_id in response.get("result"):
-            chat_id = ch_id.get("message").get("chat").get("id")
-            user_chats.append(chat_id)
+# def get_chat_id(user) -> str | None:
+#
+#     response = requests.get(f"https://api.telegram.org/bot{TOKEN}/getUpdates").json()
+#     if response.get("ok"):
+#         for update in response["result"]:
+#             if update["message"]["chat"]["username"] == user.tg_username:
+#                 return update["message"]["chat"]["id"]
